@@ -9,10 +9,9 @@ export default function Home() {
             <SafeEnvironment/>
             <PageTitle 
                 title={'Conheça nossos profissionais'}
-                subtitle={'Preencha seu endereço e veja todos os profissionais na sua localidade'}
+                subtitle={'Preencha seu endereço e veja todos os profissionais de sua localidade'}
             />           
-        </div>
-        
+        </div>  
     );
 }
 
