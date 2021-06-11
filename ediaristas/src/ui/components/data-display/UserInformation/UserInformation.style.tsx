@@ -3,7 +3,9 @@ import { Avatar, Rating } from "@material-ui/core";
 
 export const UserInformationContainer = styled("div")``;
 
-export const UserName = styled("div")``;
+export const UserName = styled("div")`
+  font-weight: bolder;
+`;
 
 export const UserDescription = styled("div")``;
 

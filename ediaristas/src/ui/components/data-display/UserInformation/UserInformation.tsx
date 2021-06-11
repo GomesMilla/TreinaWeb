@@ -9,19 +9,45 @@ import {
   UserDescription,
 } from "./UserInformation.style";
 
-const UserInformation = (props) => {
+interface UserInformationProps {
+  picture: string;
+  name: string;
+  yearold: number;
+  rating: number;
+  descreption?: string;
+}
+
+const UserInformation: React.FC<UserInformationProps> = ({
+  name,
+  picture,
+  yearold,
+  descreption,
+  rating,
+}) => {
   return (
     <UserInformationContainer>
-      <AvatarStyled src={"https://github.com/GomesMilla.png"} />
-      <UserName>Camila Adriana</UserName>
-      <YearsOld />
-      <RatingStyled readOnly value={2} />
-      <UserDescription />
+      <AvatarStyled src={picture}>{name[0]}</AvatarStyled>
+      <UserName>{name}</UserName>
+      <YearsOld>{yearold}</YearsOld>
+      <RatingStyled readOnly value={rating} />
+      <UserDescription>{descreption}</UserDescription>
     </UserInformationContainer>
   );
 };
 
 export default UserInformation;
+
+// const UserInformation: React.FC<UserInformationProps> = (props) => {
+//   return (
+//     <UserInformationContainer>
+//       <AvatarStyled src={"https://github.com/GomesMilla.png"} />
+//       <UserName>Camila Adriana</UserName>
+//       <YearsOld>19 anos</YearsOld>
+//       <RatingStyled readOnly value={2} />
+//       <UserDescription>Campanha-MG</UserDescription>
+//     </UserInformationContainer>
+//   );
+// };
 
 // Tem duas opções para as estrelas a opção de dar nota e a opção de somente lightGreen, ou seja, mostrar a nota de cada
 

@@ -13,11 +13,34 @@ export default function Home() {
           "Preencha seu endereço e veja todos os profissionais de sua localidade"
         }
       />
-      <UserInformation />
-      <UserInformation />
-      <UserInformation />
-      <UserInformation />
-      <UserInformation />
+      <UserInformation
+        name={"Camila Adriana"}
+        yearold={"19" + " anos"}
+        picture={"https://github.com/GomesMilla.png"}
+        rating={3}
+        descreption={"Campanha - MG"}
+      />
+      <UserInformation
+        name={"Mateus Claudino"}
+        yearold={"26" + " anos"}
+        picture={""}
+        rating={3}
+        descreption={"Campanha - MG"}
+      />
+      <UserInformation
+        name={"Camila Adriana"}
+        yearold={"19000000" + " anos"}
+        picture={"https://github.com/GomesMilla.png"}
+        rating={3}
+        descreption={"Campanha - MG"}
+      />
+      <UserInformation
+        name={"Camila Adriana"}
+        yearold={"19" + " anos"}
+        picture={"https://github.com/GomesMilla.png"}
+        rating={3}
+        descreption={"Campanha - MG"}
+      />
     </div>
   );
 }
