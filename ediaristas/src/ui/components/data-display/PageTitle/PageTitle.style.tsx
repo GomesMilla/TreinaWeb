@@ -15,8 +15,8 @@ export const PageTitleStyled = styled("h2")`
   /* Estilização para aparelhos pequenos */
   ${({ theme }) => theme.breakpoints.down("md")} {
     font-size: ${({ theme }) => theme.typography.body1.fontSize};
-    color: indianred;
-    font-family: fantasy;
+    color: #752cb9;
+    font-family: "Poppins", sans-serif;
   }
 `;
 // Estilização para grandes aparelhos
@@ -29,10 +29,13 @@ export const PageSubtitleStyled = styled("h3")`
   /* Estilização para aparelhos pequenos */
   ${({ theme }) => theme.breakpoints.down("md")} {
     font-size: ${({ theme }) => theme.typography.body2.fontSize};
-    color: #707070;
-    font-family: fantasy;
+    color: black;
+    font-family: "Poppins", sans-serif;
   }
 `;
+// O body2 do fontSize é um padrão que vem do
+// matereial ui e vai até dois, acima não
+// existe. Mesma ideia do H1 ate o H6.
 
 // color: 6B2AEE(ROXO);
 // ${({theme}) => theme.breakpoints.down('md')} == Eu estou falando que quero criar uma estilização especial
