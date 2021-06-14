@@ -28,16 +28,23 @@ export default function Home() {
         descreption={"Campanha - MG"}
       />
       <UserInformation
-        name={"Camila Adriana"}
-        yearold={"19000000" + " anos"}
-        picture={"https://github.com/GomesMilla.png"}
+        name={"Chritian Kern"}
+        yearold={"20" + " anos"}
+        picture={"https://https://github.com/Christian-Kern-S.png"}
         rating={3}
         descreption={"Campanha - MG"}
       />
       <UserInformation
-        name={"Camila Adriana"}
+        name={"Amanda Fernandes"}
         yearold={"19" + " anos"}
-        picture={"https://github.com/GomesMilla.png"}
+        picture={"#"}
+        rating={3}
+        descreption={"Campanha - MG"}
+      />
+      <UserInformation
+        name={"Carla Adriana"}
+        yearold={"50" + " anos"}
+        picture={"#"}
         rating={3}
         descreption={"Campanha - MG"}
       />
