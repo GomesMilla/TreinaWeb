@@ -2,8 +2,8 @@ import Head from "next/head";
 import SafeEnvironment from "ui/components/feedback/SafeEnvironment/SafeEnvironment";
 import PageTitle from "ui/components/data-display/PageTitle/PageTitle";
 import UserInformation from "ui/components/data-display/UserInformation/UserInformation";
-import TextField from "ui/components/inputs/TextField/TextField";
-
+import TextFieldMaask from "ui/components/inputs/TextFieldMask/TextFieldMask";
+import { Button } from "@material-ui/core";
 export default function Home() {
   return (
     <div>
@@ -14,7 +14,20 @@ export default function Home() {
           "Preencha seu endereço e veja todos os profissionais de sua localidade"
         }
       />
-      <TextField />
+      <TextFieldMaask
+        mask={"99.999-999"}
+        label={"Digite seu CEP"}
+        fullWidth
+        variant={"outlined"}
+      />
+      <Button
+        variant={"contained"}
+        color={"secondary"}
+        sx={{ width: "220px" }}
+        sx={{ backgroundColor: "#b08ff3" }}
+      >
+        Buscar
+      </Button>
       <UserInformation
         name={"Camila Adriana"}
         yearold={"19" + " anos"}
@@ -26,15 +39,15 @@ export default function Home() {
         name={"Mateus Claudino"}
         yearold={"26" + " anos"}
         picture={""}
-        rating={3}
+        rating={1}
         descreption={"Campanha - MG"}
       />
       <UserInformation
-        name={"Chritian Kern"}
+        name={"Yara Silvestre"}
         yearold={"20" + " anos"}
-        picture={"https://https://github.com/Christian-Kern-S.png"}
+        picture={"https://github.com/YaraSilvst.png"}
         rating={3}
-        descreption={"Campanha - MG"}
+        descreption={"Tres Corações - MG"}
       />
       <UserInformation
         name={"Amanda Fernandes"}
@@ -44,11 +57,11 @@ export default function Home() {
         descreption={"Campanha - MG"}
       />
       <UserInformation
-        name={"Carla Adriana"}
+        name={"Lucas Eduardo de Oliveira Santos"}
         yearold={"50" + " anos"}
-        picture={"#"}
-        rating={3}
-        descreption={"Campanha - MG"}
+        picture={"https://github.com/LucasSantus.png"}
+        rating={5}
+        descreption={"São Bento - MG"}
       />
     </div>
   );
