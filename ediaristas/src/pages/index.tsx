@@ -3,7 +3,12 @@ import SafeEnvironment from "ui/components/feedback/SafeEnvironment/SafeEnvironm
 import PageTitle from "ui/components/data-display/PageTitle/PageTitle";
 import UserInformation from "ui/components/data-display/UserInformation/UserInformation";
 import TextFieldMaask from "ui/components/inputs/TextFieldMask/TextFieldMask";
-import { Button, Typography, Container } from "@material-ui/core";
+import {
+  Button,
+  Typography,
+  Container,
+  CircularProgress,
+} from "@material-ui/core";
 import {
   FormElementsContainer,
   ProfissionaisPaper,
@@ -19,7 +24,7 @@ export default function Home() {
     buscarProfissionais,
     diaristas,
     erro,
-    setBuscaFeita,
+    buscaFeita,
     Carregando,
     diaristasRestantes,
   } = useIndex();
@@ -53,58 +58,85 @@ export default function Home() {
             variant={"contained"}
             color={"secondary"}
             sx={{ width: "220px" }}
-            disabled
+            disabled={!cepValido || Carregando}
+            onClick={() => buscarProfissionais(cep)}
           >
-            Buscar
+            {Carregando ? <CircularProgress size={20} /> : "Buscar"}
           </Button>
         </FormElementsContainer>
+        {true &&
+          (true ? (
+            <ProfissionaisPaper>
+              {/* Aqui começa as infomações sobre os diaristas  */}
+              <ProfissionaisContainer>
+                <UserInformation
+                  name={"Camila Adriana"}
+                  yearold={"19" + " anos"}
+                  picture={"https://github.com/GomesMilla.png"}
+                  rating={3}
+                  descreption={"Campanha - MG"}
+                />
+                <UserInformation
+                  name={"Mateus Claudino"}
+                  yearold={"26" + " anos"}
+                  picture={""}
+                  rating={1}
+                  descreption={"Campanha - MG"}
+                />
+                <UserInformation
+                  name={"Yara Silvestre"}
+                  yearold={"20" + " anos"}
+                  picture={"https://github.com/YaraSilvst.png"}
+                  rating={3}
+                  descreption={"Tres Corações - MG"}
+                />
+                <UserInformation
+                  name={"Amanda Fernandes"}
+                  yearold={"19" + " anos"}
+                  picture={"#"}
+                  rating={3}
+                  descreption={"Campanha - MG"}
+                />
+                <UserInformation
+                  name={"Lucas Eduardo de Oliveira Santos"}
+                  yearold={"50" + " anos"}
+                  picture={"https://github.com/LucasSantus.png"}
+                  rating={5}
+                  descreption={"São Bento - MG"}
+                />
+                {/* termina aqui */}
+              </ProfissionaisContainer>
+              <Container sx={{ textAlign: "center" }}>
+                {diaristasRestantes > 0 && (
+                  <Typography
+                    align="center"
+                    color={"textPrimary"}
+                    sx={{ mt: 5 }}
+                  >
+                    .... e mais {diaristasRestantes} {diaristasRestantes > 1? 'profissionais atendem'} ao
+                    seu endereço
+                  </Typography>
+                )}
 
-        <ProfissionaisPaper>
-          {/* Aqui começa as infomações sobre os diaristas  */}
-          <ProfissionaisContainer>
-            <UserInformation
-              name={"Camila Adriana"}
-              yearold={"19" + " anos"}
-              picture={"https://github.com/GomesMilla.png"}
-              rating={3}
-              descreption={"Campanha - MG"}
-            />
-            <UserInformation
-              name={"Mateus Claudino"}
-              yearold={"26" + " anos"}
-              picture={""}
-              rating={1}
-              descreption={"Campanha - MG"}
-            />
-            <UserInformation
-              name={"Yara Silvestre"}
-              yearold={"20" + " anos"}
-              picture={"https://github.com/YaraSilvst.png"}
-              rating={3}
-              descreption={"Tres Corações - MG"}
-            />
-            <UserInformation
-              name={"Amanda Fernandes"}
-              yearold={"19" + " anos"}
-              picture={"#"}
-              rating={3}
-              descreption={"Campanha - MG"}
-            />
-            <UserInformation
-              name={"Lucas Eduardo de Oliveira Santos"}
-              yearold={"50" + " anos"}
-              picture={"https://github.com/LucasSantus.png"}
-              rating={5}
-              descreption={"São Bento - MG"}
-            />
-            {/* termina aqui */}
-          </ProfissionaisContainer>
-        </ProfissionaisPaper>
+                <Button
+                  variant={"contained"}
+                  color={"secondary"}
+                  sx={{ mt: 5 }}
+                >
+                  Contratar um profissional
+                </Button>
+              </Container>
+            </ProfissionaisPaper>
+          ) : (
+            <Typography align="center" color={"textPrimary"}>
+              Ainda não temos nenhuma diarista disponível em sua região
+            </Typography>
+          ))}
       </Container>
     </div>
   );
 }
-{
-  /* <UserInformation /> Carregar essa tag para mostrar os usuario */
-}
+
+/* <UserInformation /> Carregar essa tag para mostrar os usuario */
+
 // SafeEnvironment é aqui que esta localizado a minha string Ambiente Seguro

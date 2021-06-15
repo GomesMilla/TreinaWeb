@@ -49,7 +49,7 @@ export default function useIndex() {
     buscarProfissionais,
     diaristas,
     erro,
-    setBuscaFeita,
+    buscaFeita,
     Carregando,
     diaristasRestantes,
   };
