@@ -4,7 +4,7 @@ import { Avatar, Rating } from "@material-ui/core";
 export const UserInformationContainer = styled("div")`
   display: grid;
   grid-template-columns: 60px 1fr;
-  grid-template-rows: repeat(4, auto);
+  grid-template-rows: repeat(3, auto);
   grid-template-areas:
     "avatar name"
     "avatar YearsOld"
@@ -13,8 +13,10 @@ export const UserInformationContainer = styled("div")`
 
   background-color: ${({ theme }) => theme.palette.grey[50]};
   padding: ${({ theme }) => theme.spacing(3)};
+  gap: ${({ theme }) => theme.spacing(0.5) + " " + theme.spacing(2)};
+  /* espaço entre o avatar e as outras informações */
   align-items: center;
-  gap: ${({ theme }) => theme.spacing(0.5) + "" + theme.spacing(1)};
+  /* Prestar atençao nas ordens dos elementos porque ele pode funcionar ou não */
 `;
 
 export const UserName = styled("div")`

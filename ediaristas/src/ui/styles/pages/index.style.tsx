@@ -50,3 +50,4 @@ export const ProfissionaisContainer = styled("div")`
 `;
 
 // Pesquisar sobre breakpoints.down(para aparelhos igual a pequeno
+//Trabakhar com a centralização das informações das pessoas para grande aparelhos, deixar centraLIZADO

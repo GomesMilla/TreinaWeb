@@ -9,8 +9,11 @@ import {
   ProfissionaisPaper,
   ProfissionaisContainer,
 } from "ui/styles/pages/index.style";
+import useIndex from "data/hooks/pages/useIndex.page";
 
 export default function Home() {
+  const { cep, setCep, cepValido } = useIndex();
+
   return (
     <div>
       {/* O SafeEnvironment é o cadeado para sinalizar a proteção */}
@@ -22,7 +25,6 @@ export default function Home() {
           "Preencha seu endereço e veja todos os profissionais de sua localidade"
         }
       />
-
       <Container>
         <FormElementsContainer>
           {/* Meu elemento de input que vai pegar a maskara, ou melhor o CEP */}
@@ -31,7 +33,11 @@ export default function Home() {
             label={"Digite seu CEP"}
             fullWidth
             variant={"outlined"}
+            value={cep}
+            onChange={(event) => setCep(event.target.value)}
           />
+          {cepValido}
+          {cep}
           <Typography color={"error"}>CEP Inválido</Typography>
           <Button
             variant={"contained"}
