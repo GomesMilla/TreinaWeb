@@ -12,7 +12,17 @@ import {
 import useIndex from "data/hooks/pages/useIndex.page";
 
 export default function Home() {
-  const { cep, setCep, cepValido } = useIndex();
+  const {
+    cep,
+    setCep,
+    cepValido,
+    buscarProfissionais,
+    diaristas,
+    erro,
+    setBuscaFeita,
+    Carregando,
+    diaristasRestantes,
+  } = useIndex();
 
   return (
     <div>
@@ -36,13 +46,14 @@ export default function Home() {
             value={cep}
             onChange={(event) => setCep(event.target.value)}
           />
-          {cepValido}
           {cep}
-          <Typography color={"error"}>CEP Inválido</Typography>
+          {/* if do typescript, se tiver error, ele irá mostrar a mensagem que foi escrita no back */}
+          {erro && <Typography color={"error"}>{erro}</Typography>}
           <Button
             variant={"contained"}
             color={"secondary"}
             sx={{ width: "220px" }}
+            disabled
           >
             Buscar
           </Button>
