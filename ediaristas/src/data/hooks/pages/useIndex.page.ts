@@ -37,7 +37,7 @@ export default function useIndex() {
       // esse await vai permitir que as proximas linhas de códigos só vão
       // ser executadas após receber as informações do processamento de requisição
     } catch (error) {
-      setErro("CEP não encontrado");
+      setErro("CEP não ncontrado");
       setCarregando(false);
     }
   }

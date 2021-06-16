@@ -5,3 +5,5 @@ export interface UserShortInterface {
   Idade: number;
   Cidade: string;
 }
+
+// Informações que vem da API então as nomenclaturas devem te que bater

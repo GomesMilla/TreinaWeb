@@ -64,47 +64,23 @@ export default function Home() {
             {Carregando ? <CircularProgress size={20} /> : "Buscar"}
           </Button>
         </FormElementsContainer>
-        {true &&
-          (true ? (
+        {buscaFeita &&
+          (diaristas.length > 0 ? (
             <ProfissionaisPaper>
               {/* Aqui começa as infomações sobre os diaristas  */}
               <ProfissionaisContainer>
-                <UserInformation
-                  name={"Camila Adriana"}
-                  yearold={"19" + " anos"}
-                  picture={"https://github.com/GomesMilla.png"}
-                  rating={3}
-                  descreption={"Campanha - MG"}
-                />
-                <UserInformation
-                  name={"Mateus Claudino"}
-                  yearold={"26" + " anos"}
-                  picture={""}
-                  rating={1}
-                  descreption={"Campanha - MG"}
-                />
-                <UserInformation
-                  name={"Yara Silvestre"}
-                  yearold={"20" + " anos"}
-                  picture={"https://github.com/YaraSilvst.png"}
-                  rating={3}
-                  descreption={"Tres Corações - MG"}
-                />
-                <UserInformation
-                  name={"Amanda Fernandes"}
-                  yearold={"19" + " anos"}
-                  picture={"#"}
-                  rating={3}
-                  descreption={"Campanha - MG"}
-                />
-                <UserInformation
-                  name={"Lucas Eduardo de Oliveira Santos"}
-                  yearold={"50" + " anos"}
-                  picture={"https://github.com/LucasSantus.png"}
-                  rating={5}
-                  descreption={"São Bento - MG"}
-                />
-                {/* termina aqui */}
+                {diaristas.map((item, index) => {
+                  return (
+                    <UserInformation
+                      key={index}
+                      name={item.nome_completo}
+                      picture={item.foto_usuario}
+                      rating={item.reputacao}
+                      description={item.cidade}
+                    />
+                  );
+                })}
+                {/* termina aqui as informações das diaristas */}
               </ProfissionaisContainer>
               <Container sx={{ textAlign: "center" }}>
                 {diaristasRestantes > 0 && (
@@ -113,8 +89,11 @@ export default function Home() {
                     color={"textPrimary"}
                     sx={{ mt: 5 }}
                   >
-                    .... e mais {diaristasRestantes} {diaristasRestantes > 1? 'profissionais atendem'} ao
-                    seu endereço
+                    .... e mais {diaristasRestantes}{" "}
+                    {diaristasRestantes > 1
+                      ? "profissionais atendem"
+                      : "profisional atende"}{" "}
+                    ao seu endereço
                   </Typography>
                 )}
 

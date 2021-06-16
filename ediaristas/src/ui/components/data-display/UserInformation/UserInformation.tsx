@@ -14,14 +14,14 @@ interface UserInformationProps {
   name: string;
   yearold: number;
   rating: number;
-  descreption?: string;
+  description?: string;
 }
 
 const UserInformation: React.FC<UserInformationProps> = ({
   name,
   picture,
   yearold,
-  descreption,
+  description,
   rating,
 }) => {
   return (
@@ -30,7 +30,7 @@ const UserInformation: React.FC<UserInformationProps> = ({
       <UserName>{name}</UserName>
       <YearsOld>{yearold}</YearsOld>
       <RatingStyled readOnly value={rating} />
-      <UserDescription>{descreption}</UserDescription>
+      <UserDescription>{description}</UserDescription>
     </UserInformationContainer>
   );
 };
