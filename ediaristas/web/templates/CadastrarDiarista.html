@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block conteudo %}
+  <body>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %} 
+      {{formDiarista|crispy}}
+      <br>
+      <button type="submit" class="btn btn-outline-primary"">Cadastrar</button>     
+      <!-- <button type="submit">Cadastrar</button> -->
+    </form>
+  </body>
+</html>
+
+<!-- enctype="multipart/form-data" => É para que o formulário aceite múltiplos arquivos -->
+{% endblock conteudo %}

@@ -1,0 +1,17 @@
+body{
+    background-color: rgb(245, 245, 245);
+}
+.right{
+    margin-top: 50px;
+}
+footer {
+    text-align: center;
+    padding: 3px;
+    background-color: black;
+    color: rgb(247, 245, 245);
+    position: fixed;
+    height: 50px;
+    bottom: 0;
+    width: 100%;
+
+}

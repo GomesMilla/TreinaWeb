@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.compat.css"/>
+    <!-- importando CSS e JV  -->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.css' %}" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/design.css' %}" />
+    <link href="{% static 'css/HoldOn.min.css'%}" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/datetimepicker.js' %}" ></script>
+    <script src="{% static 'js/jquery.mask.js' %}"></script>
+    <script  type="text/javascript" src="{% static 'js/bootstrap.js' %}" ></script>
+    <script  type="text/javascript" src="{% static 'js/bootstrap.min.js' %}" ></script>
+    <script type="text/javascript" src="{% static 'js/custom.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/HoldOn.min.js'%}"></script>
+    <!-- Importando icones -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <title>{{nomePagina}}</title>
+  </head>
+
+  <body>
+    
+
+<header>
+  <nav class="navbar navbar-expand-lg  bg-dark md-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'CadastarDiaristas' %}">Ediaristas-TreinaWeb</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'ListarDiaristas' %}">Home</a>
+          </li>
+        <form class="d-flex position-absolute bottom-1 end-0">
+          <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+     
+</header>
+
+    <main role="main" class="container">
+      {%block conteudo%} 
+      {%endblock conteudo%}
+    </main>
+
+    <br><br>
+    <footer>
+          <p>Ediaristas-TreinaWeb<br> 
+    </footer>
+
+    <script>
+      $(document).ready(function () {
+        $(window).bind("beforeunload", function () {
+          var options = {
+            theme: "sk-circle",
+            message: "Por favor, aguarde...",
+            backgroundColor: "#000",
+            textColor: "white",
+          };
+
+          HoldOn.open(options);
+        });
+
+        $(window).load(function () {
+          HoldOn.close();
+        });
+      });
+    </script>
+    {% block scripts %}
+    {% endblock %}
+  </body>
+</html>
