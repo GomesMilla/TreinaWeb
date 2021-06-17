@@ -4,6 +4,9 @@ body{
 .right{
     margin-top: 50px;
 }
+.centro{
+    align-items: center;
+}
 footer {
     text-align: center;
     padding: 3px;

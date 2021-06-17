@@ -1,4 +1,5 @@
 {%extends "base.html" %}
+{% load easy_mask %}
 {% load static %}
 {% block conteudo %}
 <body class="">
@@ -6,12 +7,11 @@
       <table class="table table-striped table-hover right">
           <thead>
             <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Nome</th>
+              <th scope="col" >ID</th>
+              <th scope="col" >Nome</th>
               <th scope="col">Email</th>
               <th scope="col">CEP</th>
               <th scope="col">Ações</th>
-              <th scope="col">Opções</th>
             </tr>
           </thead>
         <tbody>
@@ -20,11 +20,10 @@
               <th scope="row">{{diarista.id}}</th>
               <td>{{diarista.nome_completo}}</td>
               <td>{{diarista.email}}</td>
-              <td>{{diarista.cep}}</td>
-              <td>{{diarista.nome}}</td>
+              <td>{{diarista.cep | cep}}</td>
               <td>
                   <a href="{% url 'EditarDiarista' diarista.id %}">Editar</a>
-                  <a href="#">Remover</a>
+                  <a href="{% url 'RemoverDiarista' diarista.id %}">Remover</a>
               </td>
             </tr>
           {% endfor %}

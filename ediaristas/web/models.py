@@ -2,7 +2,7 @@ from django.db import models
 
 class Diarista(models.Model):
     nome_completo = models.CharField("Nome Completo ", max_length = 100)
-    cpf = models.CharField("CPF ", max_length=12, unique=True)
+    cpf = models.CharField("CPF ", max_length=11, unique=True)
     email= models.EmailField("E-mail ", unique=True)
     telefone = models.CharField("Telefone ", max_length=11)
     logradouro = models.CharField("Logradouro ", max_length=60)
@@ -18,6 +18,7 @@ class Diarista(models.Model):
         verbose_name = "Diarista"
         verbose_name_plural = "Diaristas"
         db_table = 'Diarista'
+
 
     def __str__(self):
         return self.nome_completo

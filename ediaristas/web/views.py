@@ -9,7 +9,7 @@ def CadastarDiaristas(request):
 
     if request.method == "POST":
         formDiaristaPrenchido = DiaristaForm(request.POST, request.FILES)
-        
+        print(formDiaristaPrenchido)
         if formDiaristaPrenchido.is_valid():
             formDiaristaPrenchido.save()
 
@@ -36,19 +36,33 @@ def ListarDiaristas(request):
 
     return render(request, "ListaDeDiaristas.html", context)
 
-def EditarDiarista(request, Diarista_id):
-
+def EditarDiarista(request, Diarista_id):    
     diarista = Diarista.objects.get(id = Diarista_id)
-    formDiaristaPrenchido = DiaristaForm(request.POST or None, instance = diarista)
-
-    if formDiaristaPrenchido.is_valid():
+    
+    if request.method == "POST":
+        formDiaristaPrenchido = DiaristaForm(request.POST or None, request.FILES, instance = diarista)
+        if formDiaristaPrenchido.is_valid():
             formDiaristaPrenchido.save()
-
             return redirect("ListarDiaristas")
 
+    else:
+        formDiaristaPrenchido = DiaristaForm(instance=diarista)
+    
     context = {
-        "nomePagina" : "Editar Diaristas",
+        "nomePagina" : "Editar Diarista",
         "formDiarista" : formDiaristaPrenchido
+    }
+    
+    return render(request, 'CadastrarDiarista.html', context)
+
+def RemoverDiarista(request, Diarista_id):
+
+    diaristaRemover = Diarista.objects.get(id = Diarista_id)
+    diaristaRemover.delete()
+    return redirect("ListarDiaristas")
+
+    context = {
+        "nomePagina" : "Remover Diarista",
     }
     
     return render(request, 'CadastrarDiarista.html', context)

@@ -46,7 +46,6 @@
       </div>
     </div>
   </nav>
-     
 </header>
 
     <main role="main" class="container">
@@ -60,6 +59,11 @@
     </footer>
 
     <script>
+        $(function(){
+          $.applyDataMask();
+        }
+        );
+
       $(document).ready(function () {
         $(window).bind("beforeunload", function () {
           var options = {
