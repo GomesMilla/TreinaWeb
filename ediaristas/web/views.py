@@ -30,7 +30,7 @@ def ListarDiaristas(request):
     allDiaristas = Diarista.objects.all()
 
     context = {
-        "nomePagina" : "Listar Diaristas",
+        "nomePagina" : "Lista de Diaristas",
         "allDiaristas" : allDiaristas
     }
 

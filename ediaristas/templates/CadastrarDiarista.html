@@ -4,16 +4,12 @@
 {% block conteudo %}
 
   <body>
-    <h1 class="container">Cadastrar Diarista</h1>
-    <div class="progress">
-        <div class="progress-bar bg-dark" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
     <br>
     <form method="POST" enctype="multipart/form-data">
       {% csrf_token %} 
       {{formDiarista|crispy}}
       <br>
-      <button type="submit" class="btn btn-outline-primary"">Cadastrar</button>     
+      <button type="submit" class="btn btn-outline-primary">Cadastrar</button>     
       <!-- <button type="submit">Cadastrar</button> -->
     </form>
   </body>

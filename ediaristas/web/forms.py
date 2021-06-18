@@ -52,15 +52,15 @@ class DiaristaForm(forms.ModelForm):
         # Cidade API esta literalmente recebendo todos os valores daquele CEP como por exemplo rua, logradouro, complemento, bairro, DD, SIAFI
         # Mas oque realmente importa aqui é o IBGE porque isso esta recebendo todos os valores da variavel cidade_api, porém estou setando somente o ibge da lista 
         diaristainstance.codigo_ibge = cidade_api['ibge']
-        diaristainstance.logradouro = cidade_api['logradouro']
-        print(diaristainstance.logradouro)
-        diaristainstance.complemento = cidade_api['complemento']
-        print( diaristainstance.complemento)
-        diaristainstance.estado = cidade_api['uf']
-        print(diaristainstance.estado)
-        diaristainstance.bairro = cidade_api['bairro']
-        print(diaristainstance.bairro)
-        print(diaristainstance.codigo_ibge)
+        # diaristainstance.logradouro = cidade_api['logradouro']
+        # print(diaristainstance.logradouro)
+        # diaristainstance.complemento = cidade_api['complemento']
+        # print( diaristainstance.complemento)
+        # diaristainstance.estado = cidade_api['uf']
+        # print(diaristainstance.estado)
+        # diaristainstance.bairro = cidade_api['bairro']
+        # print(diaristainstance.bairro)
+        # print(diaristainstance.codigo_ibge)
         # A minha minha diarista esta recebendo o valor do código do IBGE que foi recebida pela API do correio 
         diaristainstance.save()
         return diaristainstance
